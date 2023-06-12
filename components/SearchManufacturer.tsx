@@ -12,11 +12,11 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
     query === ""
       ? manufacturers
       : manufacturers.filter((item) =>
-          item
-            .toLowerCase()
-            .replace(/\s+/g, "")
-            .includes(query.toLowerCase().replace(/\s+/g, ""))
-        );
+        item
+          .toLowerCase()
+          .replace(/\s+/g, "")
+          .includes(query.toLowerCase().replace(/\s+/g, ""))
+      );
 
   return (
     <div className='search-manufacturer'>
@@ -65,8 +65,7 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
                   <Combobox.Option
                     key={item}
                     className={({ active }) =>
-                      `relative search-manufacturer__option ${
-                        active ? "bg-primary-blue text-white" : "text-gray-900"
+                      `relative search-manufacturer__option ${active ? "bg-primary-blue text-white" : "text-gray-900"
                       }`
                     }
                     value={item}
@@ -78,7 +77,7 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
                         </span>
 
                         {selected ? (
-                          <span className={`absolute inset-y-0 left-0 flex items-center pl-3 ${active? "text-white": "text-pribg-primary-purple"}`}
+                          <span className={`absolute inset-y-0 left-0 flex items-center pl-3 ${active ? "text-white" : "text-pribg-primary-purple"}`}
                           ></span>
                         ) : null}
                       </>

@@ -33,12 +33,12 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
   };
 
 export const generateCarImageUrl = (car : CarProps , angle?:string) =>{
-    // afglobex-corporation
+    // afhooli
     const url = new URL('https://cdn.imagin.studio/getimage')
 
     const {make , year, model} = car;
 
-    url.searchParams.append('customer','afglobex-corporation')
+    url.searchParams.append('customer','afhooli')
 
     url.searchParams.append('make', make);
     url.searchParams.append('modelFamily', model.split(' ')[0]);
@@ -47,4 +47,12 @@ export const generateCarImageUrl = (car : CarProps , angle?:string) =>{
     url.searchParams.append('angle', `${angle}`);
 
     return `${url}`
+}
+
+export const updateSearchParams = (type:string, value : string) =>{
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set(type, value)
+
+    const newPathname=`${window.location.pathname}?${searchParams.toString()}`
+    return newPathname;
 }
