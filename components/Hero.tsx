@@ -23,7 +23,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="hero__image-container border-2 border-pink-400">
+      <div className="hero__image-container">
         <div className="hero__image">
           <Image
             src="/hero.png"
@@ -33,7 +33,7 @@ const Hero = () => {
             className="object-contain absolute top-48"
           />
         </div>
-        <div className="hero__image-overlay border-2 border-green-400" />
+        <div className="hero__image-overlay" />
       </div>
     </div>
   );
